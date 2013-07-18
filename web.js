@@ -3,7 +3,9 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(var content = express.readFileSnyc("/home/ubuntu/myrepo/bitstarter/index.html");
+var fs = require('fs');
+var data = fs.readFileSync('index.html');
+  response.send(data.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
